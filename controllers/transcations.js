@@ -53,7 +53,7 @@ const deleteTranscation = async(req,res)=>{
             });
         }
 
-        await transcation.remove();
+        await Transcation.deleteOne(transcation);
 
         return res.status(200).json({
             success: true,
