@@ -49,7 +49,8 @@ function addTransactionDOM(transaction) {
     const deleteTrans = document.querySelectorAll('.delete-btn');
     deleteTrans.forEach((item)=>{
         item.addEventListener('click', (e) => {
-            removeTransaction(e.currentTarget.dataset.id)
+            removeTransaction(e.currentTarget.dataset.id);
+            list.removeChild(document.querySelector(`[data-id='${e.currentTarget.dataset.id}']`).parentNode);
         });
     })
 }
@@ -75,9 +76,9 @@ function updateValues() {
             -1
         ).toFixed(2);
 
-        balance.innerText = `$${total}`;
-        money_plus.innerText = `$${income}`;
-        money_minus.innerText = `$${expense}`;
+        balance.innerText = `₹${total}`;
+        money_plus.innerText = `₹${income}`;
+        money_minus.innerText = `₹${expense}`;
     }).catch((err) => {
         console.log(err);
     })
