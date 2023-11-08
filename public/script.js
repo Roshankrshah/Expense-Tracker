@@ -58,7 +58,7 @@ function addTransactionDOM(transaction) {
 // Update the balance, income and expense
 function updateValues() {
 
-    axios.get('http://localhost:4005/api/v1/transactions', {
+    axios.get('https://expense-tracker-bb3t.onrender.com/api/v1/transactions', {
         timeout: 5000
     }).then(resp => {
         let transactions = resp.data.data;
@@ -86,7 +86,7 @@ function updateValues() {
 
 // Remove transaction by ID
 function removeTransaction(id) {
-    axios.delete(`http://localhost:4005/api/v1/transactions/${id}`)
+    axios.delete(`https://expense-tracker-bb3t.onrender.com/api/v1/transactions/${id}`)
     .then(resp=>{
         if (resp.data.success) {
             updateValues();
