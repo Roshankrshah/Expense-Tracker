@@ -15,7 +15,7 @@ function addTransaction(e) {
     if (text.value.trim() === '' || amount.value.trim() === '') {
         alert('Please add a text and amount');
     } else {
-        axios.post('http://localhost:4005/api/v1/transactions', {
+        axios.post('https://expense-tracker-bb3t.onrender.com/api/v1/transactions', {
             text: text.value,
             amount: amount.value
         }).then(resp => {
